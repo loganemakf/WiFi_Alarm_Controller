@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- BEGIN BOOTSTRAP CDN LINKS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+    <!-- END BOOTSTRAP CDN LINKS -->
+
+    <title>%ACTION_STR% Alarm Time | WRC</title>
+</head>
+
+<body class="bg-dark text-light">
+    <div class="container">
+        <h1 class="text-center mt-5 pt-5 pb-4">%ACTION_STR% Alarm Time</h1>
+        <form action="/" method="get">
+            <div class="row justify-content-evenly pt-1">
+                <div class="col-lg-5 col-md-6 col-sm-8 col-10 text-center">
+
+                    <div class="input-group mb-3">
+                        <select class="form-select" name="hour">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected>5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <span class="input-group-text">:</span>
+                        <select class="form-select" name="minute">
+                            <option value="0">00</option>
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15" selected>15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                        </select>
+                        <input type="radio" class="btn-check" name="ampm" id="am-outlined" value="am" autocomplete="off"
+                            checked>
+                        <label class="btn btn-outline-warning" for="am-outlined">AM</label>
+
+                        <input type="radio" class="btn-check" name="ampm" id="pm-outlined" value="pm"
+                            autocomplete="off">
+                        <label class="btn btn-outline-primary"
+                            style="border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem"
+                            for="pm-outlined">PM</label>
+                    </div>
+                    <input type="hidden" name="type" value="%ACTION_TYPE%">
+                </div>
+
+            </div>
+            <div class="row justify-content-evenly pt-1 pb-4">
+                <div class="d-grid gap-2 col-lg-5 col-md-6 col-sm-8 col-10 text-center">
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-outline-secondary" href="/">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Set Alarm</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
