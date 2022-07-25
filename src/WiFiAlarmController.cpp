@@ -193,6 +193,16 @@ void setup() {
                   processFixTimePage);
   });
 
+  server.serveStatic("/android-chrome-192x192.png", SPIFFS,
+                     "/android-chrome-192x192.png");
+  server.serveStatic("/android-chrome-512x512.png", SPIFFS,
+                     "/android-chrome-512x512.png");
+  server.serveStatic("/apple-touch-icon.png", SPIFFS, "/apple-touch-icon.png");
+  server.serveStatic("/favicon-16x16.png", SPIFFS, "/favicon-16x16.png");
+  server.serveStatic("/favicon-32x32.png", SPIFFS, "/favicon-32x32.png");
+  server.serveStatic("/favicon.ico", SPIFFS, "/favicon.ico");
+  server.serveStatic("/site.webmanifest", SPIFFS, "/site.webmanifest");
+
   server.onNotFound(notFound);
 
   server.begin();
