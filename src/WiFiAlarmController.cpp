@@ -41,7 +41,7 @@ static const microseconds_t onOff[] = {
 
 static const microseconds_t timePlus[] = {
     // ON, OFF (in 10's of microseconds)
-    1000, 1560, 640, 380,  500, 520, 500, 1540, 520, 500,  520, 500,
+    1020, 1560, 640, 380,  500, 520, 500, 1540, 520, 500,  520, 500,
     520,  1540, 500, 520,  500, 520, 500, 1560, 500, 1540, 500, 520,
     500,  1560, 500, 1540, 500, 520, 500, 1560, 500, 1540, 500, 51920,
     1000, 1560, 500, 520,  500, 520, 500, 1560, 480, 540,  500, 520,
@@ -59,7 +59,7 @@ static const microseconds_t timeMinus[] = {
 
 static const microseconds_t alarmOnOff[] = {
     // ON, OFF (in 10's of microseconds)
-    1000, 1560, 500, 520,  500, 1560, 480, 540,  500, 520,  500, 520,
+    1020, 1560, 500, 520,  500, 1560, 480, 540,  500, 520,  500, 520,
     500,  1540, 500, 520,  500, 520,  500, 1560, 500, 520,  500, 1540,
     500,  1560, 500, 1540, 520, 500,  520, 1540, 500, 1540, 500, 51900,
     1020, 1560, 500, 520,  500, 1540, 500, 520,  500, 520,  500, 520,
@@ -125,7 +125,7 @@ void setup() {
   // IR setup
   randomSeed(analogRead(A0));
   irSender = IrSenderPwm::getInstance(true, PIN);
-  dutyCycle = static_cast<dutycycle_t>(random(20, 80));
+  dutyCycle = static_cast<dutycycle_t>(25);
 
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
@@ -211,18 +211,19 @@ void setup() {
 void loop() {
   // always be checking to see whether a new alarm time has been set
   if (minuteDifference) {
+    delay(230);
     irSender->send(alarmTimeSequence, necFrequency, dutyCycle);
-    delay(200);
+    delay(300);
 
     while (minuteDifference > 0) {
       irSender->send(timePlusSequence, necFrequency, dutyCycle);
       --minuteDifference;
-      delay(200);
+      delay(230);
     }
     while (minuteDifference < 0) {
       irSender->send(timeMinusSequence, necFrequency, dutyCycle);
       ++minuteDifference;
-      delay(200);
+      delay(230);
     }
 
     irSender->send(alarmOnOffSequence, necFrequency, dutyCycle);
